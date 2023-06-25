@@ -1,0 +1,190 @@
+.container-fluid {
+  background-color: #F5F6F9;
+  box-sizing: border-box;
+  height: 100vh;
+
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat, no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, #635CA8);
+  opacity: 1.25;
+}
+
+.layer {
+  position: absolute;
+  background: linear-gradient(360deg, rgba(99, 92, 168, 1) 0%, rgba(255, 255, 255, 0.29453779802936797) 52%, rgb(133, 133, 133, 0.1) 100%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.leftCol {
+  position: relative;
+  height: 100vh;
+}
+
+p {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.Rheader {
+  justify-self: end;
+  padding-top: 2%;
+  margin-left: auto;
+  color: #38383880;
+  padding-right: 70px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.highLight {
+  color: #635CA8 !important;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration: none !important;
+  color: #635CA8
+}
+
+a:hover {
+
+  cursor: pointer;
+}
+
+.registerDv {
+  margin-top: 5%;
+
+
+}
+
+.col1 {
+  width: 37%;
+  height: 100px;
+}
+
+input {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #B4ACE5;
+  border-radius: 4px;
+  opacity: 1;
+
+}
+
+.terms {
+  color: #3482F4;
+}
+
+.next {
+  background-color: #635CA8;
+  color: #FFFFFF;
+  width: 150px;
+
+}
+
+.termsDv {
+  margin-top: 30px;
+  font-size: 14px;
+  margin-left: 5px;
+
+}
+
+.form-check-input {
+
+  border: 1px solid black;
+}
+
+.nxtButton {
+  padding-right: 24%;
+}
+
+.form-control {
+  margin-top: 8px;
+}
+
+h4 {
+  margin-top: 22px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+h6 {
+  color: #383838;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.note {
+  padding: 22px;
+  background-color: #FFFFFF;
+  width: 30%;
+  height: 150px;
+  border-radius: 16px 16px 57px 16px;
+  position: absolute;
+  margin-top: 35%;
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+
+.noteP {
+  font-size: 14px;
+}
+
+.quotes {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  margin-top: -15%;
+  margin-left: -15%;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+}
+
+.nextButton {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+::placeholder {
+  color: #B7BEC9;
+  font-size: 12px;
+}
+
+.smallText {
+  display: flex;
+  justify-content: end;
+  padding: 0px;
+  margin: 0px
+}
+
+.is-invalid {
+  margin-bottom: 0px;
+
+}
+
+.sign {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  margin-left: 89%;
+  margin-top: -16%;
+  cursor: pointer;
+}

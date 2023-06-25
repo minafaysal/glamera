@@ -1,0 +1,243 @@
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="leftCol col-lg-3 col-md-12 col-sm-12">
+      <img src="../../assets/Group 44.svg " alt="" class="backgroundImg" />
+
+      <div
+        class="d-flex text-start"
+        style="flex-direction: column; position: absolute; width: 100%"
+      >
+        <img src="../../assets/logo.svg" alt="logo" class="logo" />
+        <p class="firstTitle">
+          Few clicks away<br />
+          from creating your business
+        </p>
+        <p class="secondTitle">
+          Start your business in minutes.<br />
+          save time and money
+        </p>
+      </div>
+    </div>
+
+    <div class="rightCol col-lg-8 col-md-12 col-sm-12 offset-1">
+      <div style="display: flex">
+        <P class="Rheader"
+          >Having troubles?
+          <span class="highLight"> Get Help</span>
+        </P>
+      </div>
+
+      <div class="registerDv">
+        <div style="padding-bottom: 10px">
+          <a routerLink="">
+            <img src="../../assets/Group 15.svg" alt="arrow" class="arrow"
+          /></a>
+        </div>
+        <div>
+          <h3 style="color: #454c66; font-weight: bolder">
+            Choose the type of business
+          </h3>
+          <p style="color: #454c66">
+            To get start tell us what type of Business you are going to<br />
+            incorporate and name Enter your email address to continue.
+          </p>
+        </div>
+        <div>
+          <form [formGroup]="bussinessInfForm">
+            <div class="d-flex flex-wrap" style="justify-content: start">
+              <div class="form-group col2">
+                <label> Business Type </label>
+                <input
+                  [class.is-invalid]="
+                    businessType?.invalid && businessType?.touched
+                  "
+                  formControlName="businessType"
+                  type="text"
+                  class="form-control bussinesInput"
+                  placeholder="Enter your Business Type"
+                />
+                <div
+                  *ngIf="businessType?.invalid && businessType?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="businessType?.errors?.['required']"
+                    class="text-danger"
+                    >Business Type is required
+                  </small>
+                  <small
+                    *ngIf="businessType?.errors?.['minlength']"
+                    class="text-danger"
+                    >Business Type must be minlength as 4 charachter
+                  </small>
+                </div>
+              </div>
+              <div class="form-group col2">
+                <label> Business Type </label><br />
+                <div class="d-flex justify-content-evenly">
+                  <div class="gategory d-flex justify-content-between">
+                    <div class="d-flex">
+                      <input
+                        type="radio"
+                        value="Salon"
+                        formControlName="businessType2"
+                        class="typeInput"
+                      />
+                      <p class="pt-3 pl-5 typeText">Salon</p>
+                    </div>
+                  </div>
+                  <div class="gategory d-flex justify-content-between">
+                    <div class="d-flex">
+                      <input
+                        type="radio"
+                        value="GYm"
+                        formControlName="businessType2"
+                        class="typeInput"
+                      />
+                      <p class="pt-3 pl-5 typeText">GYm</p>
+                    </div>
+                  </div>
+                  <div class="gategory d-flex justify-content-between">
+                    <div class="d-flex">
+                      <input
+                        type="radio"
+                        value="Spa"
+                        formControlName="businessType2"
+                        class="typeInput"
+                      />
+                      <p class="pt-3 pl-5 typeText">Spa</p>
+                    </div>
+                  </div>
+                  <div class="gategory d-flex justify-content-between">
+                    <div class="d-flex">
+                      <input
+                        type="radio"
+                        value="Clinic"
+                        formControlName="businessType2"
+                        class="typeInput"
+                      />
+                      <p class="pt-3 pl-5 typeText">Clinic</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col1">
+                <label> Governorate </label>
+                <select formControlName="Governorate" class="select">
+                  <option value="" disabled selected class="placeholder">
+                    Select Governorate
+                  </option>
+                  <option
+                    *ngFor="let order of Governorates; let i = index"
+                    [value]="order"
+                    data-icon="glyphicon-glass"
+                  >
+                    {{ order }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="Governorate?.invalid && Governorate?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="Governorate?.errors?.['required']"
+                    class="text-danger"
+                    >Governorate is required
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1" style="margin-left: 16px">
+                <label> District </label>
+                <select formControlName="District" class="select">
+                  <option value="" disabled selected class="placeholder">
+                    Select District
+                  </option>
+                  <option
+                    *ngFor="let order of Districts; let i = index"
+                    [value]="order"
+                    data-icon="glyphicon-glass"
+                  >
+                    {{ order }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="District?.invalid && District?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="District?.errors?.['required']"
+                    class="text-danger"
+                    >District is required
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1">
+                <label> How did you know us? </label>
+                <select formControlName="knewUs" class="select">
+                  <option value="" disabled selected class="placeholder">
+                    Select one
+                  </option>
+                  <option
+                    *ngFor="let order of defaultOrders; let i = index"
+                    [value]="order.name"
+                    data-icon="glyphicon-glass"
+                  >
+                    {{ order.name }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="knewUs?.invalid && knewUs?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="knewUs?.errors?.['required']"
+                    class="text-danger"
+                    >input is required
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1" style="margin-left: 16px">
+                <label>
+                  Are you currently using system ?
+                  <img src="../../assets/question.png" id="question" />
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  value="Yes"
+                  formControlName="systemUsing"
+                  id="radio"
+                />
+                Yes
+                <input
+                  type="radio"
+                  value="No"
+                  formControlName="systemUsing"
+                  id="radio"
+                  style="margin-left: 50px"
+                />
+                No
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <div class="nxtButton">
+                <button class="btn next" (click)="submiteForm()">
+                  CREATE ACCOUNT
+                  <img
+                    src="../../assets/Group 2.svg"
+                    alt="arrow"
+                    class="arrow"
+                  />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="background d-flex justify-content-center align-items-center pt-5">
+  <div class="contain bg-white border px-2 text-center">
+    <a routerLink="/businessInfo">
+      <img src="../../assets/Group 39.svg" id="close" class="d-flex" /></a
+    ><br />
+    <img src="../../assets/Group 14.svg" id="post" />
+
+    <h3 class="py-3">Verification Code</h3>
+    <p>
+      Please enter the verification code sent to your <br />phone number ** 34
+    </p>
+    <ng-otp-input
+      [config]="otpConfig"
+      class="d-flex justify-content-center"
+      (onInputChange)="onOtpChange($event)"
+    ></ng-otp-input>
+    <div
+      class="d-flex text-bold justify-content-center align-items-center"
+      id="timer"
+    ></div>
+    <p class="py-4">
+      The code will be sent again within
+      <span class="timer"> {{ timeleft }}</span> seconds
+    </p>
+    <button class="btn next">VERIFY</button>
+  </div>
+</div>

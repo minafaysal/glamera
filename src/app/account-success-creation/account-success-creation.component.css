@@ -1,0 +1,19 @@
+.background{
+height:100vh;
+    background-color:#F5F6F9;
+}
+h3{
+    color:#454C66;
+    font-size: 24px;
+    font-weight: bolder;
+    
+}
+p{
+    font-size: 16px;
+    color:#747A88
+}
+.contains{
+    position:fixed;
+    margin-top:20%
+}
+*{font-family: 'Poppins', sans-serif;}

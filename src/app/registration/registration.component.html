@@ -1,0 +1,202 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="leftCol col-lg-4 col-md-12 col-sm-12 p-0">
+      <img src="../../assets/3.png " alt="" />
+      <div class="layer"></div>
+    </div>
+
+    <div class="rightCol col-lg-7 col-md-12 col-sm-12 offset-1">
+      <div style="display: flex">
+        <P class="Rheader"
+          >Having troubles?
+          <span class="highLight"><a routerLink="">Get Help</a></span>
+        </P>
+      </div>
+
+      <div class="registerDv">
+        <div style="margin-bottom: 5%">
+          <h3 style="color: #454c66; font-weight: bolder">
+            Start your business now
+          </h3>
+          <p style="color: #454c66">
+            Creating your company is just a few steps away,<br />
+            Enter your email address to continue.
+          </p>
+        </div>
+        <div>
+          <form [formGroup]="registrationForm">
+            <div class="d-flex flex-wrap" style="justify-content: start">
+              <div class="form-group col1">
+                <label> First Name </label>
+                <input
+                  [class.is-invalid]="firstName?.invalid && firstName?.touched"
+                  formControlName="firstName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your first name"
+                />
+                <div
+                  *ngIf="firstName?.invalid && firstName?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="firstName?.errors?.['required']"
+                    class="text-danger"
+                    >first name is required
+                  </small>
+                  <small
+                    *ngIf="firstName?.errors?.['pattern']"
+                    class="text-danger"
+                    >Please enter letters only
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1" style="margin-left: 16px">
+                <label> Last Name </label>
+                <input
+                  [class.is-invalid]="lastName?.invalid && lastName?.touched"
+                  formControlName="lastName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your last name"
+                />
+                <div
+                  *ngIf="lastName?.invalid && lastName?.touched"
+                  class="smallText"
+                >
+                  <small
+                    *ngIf="lastName?.errors?.['required']"
+                    class="text-danger"
+                    >last name is required
+                  </small>
+                  <small
+                    *ngIf="lastName?.errors?.['pattern']"
+                    class="text-danger"
+                    >Please enter letters only
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1">
+                <label> Email Address </label>
+                <input
+                  [class.is-invalid]="email?.invalid && email?.touched"
+                  formControlName="email"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <div *ngIf="email?.invalid && email?.touched" class="smallText">
+                  <small *ngIf="email?.errors?.['required']" class="text-danger"
+                    >email is required
+                  </small>
+                  <small *ngIf="email?.errors?.['pattern']" class="text-danger"
+                    >Please enter a vaild email address
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1" style="margin-left: 16px">
+                <label> Phone Number </label>
+                <input
+                  [class.is-invalid]="phone?.invalid && phone?.touched"
+                  formControlName="phone"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your phone"
+                />
+                <div *ngIf="phone?.invalid && phone?.touched" class="smallText">
+                  <small *ngIf="phone?.errors?.['required']" class="text-danger"
+                    >phone number is required
+                  </small>
+                  <small
+                    *ngIf="phone?.errors?.['minlength']"
+                    class="text-danger"
+                    >Please enter a valid phone number
+                  </small>
+                </div>
+              </div>
+
+              <div class="form-group col1">
+                <label> Password </label>
+                <div style="position: relative">
+                  <input
+                    [class.is-invalid]="password?.invalid && password?.touched"
+                    formControlName="password"
+                    [type]="hide ? 'password' : 'text'"
+                    class="form-control password"
+                    placeholder="Enter your first Password"
+                  />
+                  <img
+                    src="../../assets/Group 8.svg"
+                    alt="eye"
+                    class="sign"
+                    (click)="toggleShow()"
+                  />
+                  <div
+                    *ngIf="password?.invalid && password?.touched"
+                    class="smallText"
+                  >
+                    <small
+                      *ngIf="password?.errors?.['required']"
+                      class="text-danger"
+                      >Password is required
+                    </small>
+                    <small
+                      *ngIf="password?.errors?.['pattern']"
+                      class="text-danger"
+                      >Please enter 8 digits of A,a,12,!@
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between termsDv">
+              <div class="form-check mb-3">
+                <input
+                  formControlName="checkbox"
+                  type="checkbox"
+                  class="form-check-input"
+                />
+                <label class="form-check-label">
+                  Agree to the <span class="terms">Privacy Policy</span> and
+                  <br />
+                  <span class="terms">Terms & Conditions</span>
+                </label>
+              </div>
+              <div class="nxtButton">
+                <button
+                  class="btn next nextButton"
+                  type="submit"
+                  (click)="submiteForm()"
+                >
+                  <div style="color: #fff">Next</div>
+                  <div>
+                    <img
+                      src="../../assets/Group 2.svg"
+                      alt="arrow"
+                      class="arrow"
+                    />
+                  </div>
+                </button>
+                <!-- <input type="submit" class="btn btn-primary m-3" value="REGISTER"> -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <img src="../../assets/Group 52.svg" alt="note" class="quotes" />
+
+      <p class="noteP">
+        Lorem Ipsum is simply dummy text of the <br />
+        printing and typesetting industry
+      </p>
+      <h4>Salma Mohamed</h4>
+      <h6>Founder, Soliter Salon</h6>
+    </div>
+  </div>
+</div>
